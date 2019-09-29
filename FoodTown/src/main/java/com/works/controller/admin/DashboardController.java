@@ -89,6 +89,5 @@ public class DashboardController {
 		tr.commit();
 		return Util.control(req, "redirect:/admin/dashboard");
 	}
-
 	
 }

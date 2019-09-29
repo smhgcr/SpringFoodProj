@@ -78,13 +78,26 @@ public class BasketController {
 			
 			orderService.createOrder(newOrder);
 			
-			model.addAttribute("orderCreated", true);
+			sess.setAttribute("basket", null);
+			
+			sess.setAttribute("orderCreated", true);
+			sess.setAttribute("showOrderCreated", true);
+
+			return "redirect:/";
 		} catch (Exception e) {
-			model.addAttribute("orderCreated", false);
 			e.printStackTrace();
+			return "order";
 		}
 		
-		return "order";
 	}
+	
+	
+	@RequestMapping(value = "/back-page" , method = RequestMethod.GET)
+	public String backPage() {
+		
+		
+		return "redirect:/detail";
+	}
+			
 
 }

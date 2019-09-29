@@ -62,7 +62,7 @@ public class UserLoginController {
 	public String logout(Model model, HttpSession sess) {
 		Customer customer = (Customer) sess.getAttribute("loggedUser");
 		if (customer != null) {
-			sess.setAttribute("loggedUser", null);
+			sess.invalidate();
 		}
 		
 		return "redirect:/";

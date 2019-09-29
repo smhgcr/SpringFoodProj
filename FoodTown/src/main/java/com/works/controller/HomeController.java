@@ -25,11 +25,18 @@ public class HomeController {
 	public String home(Model model, HttpSession sess) {
 		
 		Customer customer = (Customer) sess.getAttribute("loggedUser");
+		Boolean orderCreated = (Boolean) sess.getAttribute("orderCreated");
+		Boolean showOrderCreated = (Boolean) sess.getAttribute("showOrderCreated");
 		
 		List<Product> ls = productService.getAllProducts();
 		model.addAttribute("productList" , ls);
 		model.addAttribute("customer" , customer);
-	
+		
+		if (showOrderCreated != null && showOrderCreated == true) {
+			model.addAttribute("orderCreated", orderCreated);
+			sess.setAttribute("showOrderCreated", false);
+		}
+		
 		return "home";
 	}
 	

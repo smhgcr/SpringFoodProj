@@ -30,4 +30,6 @@ public class DetailController {
 		
 		return "detail";
 	}
+	
+	
 }

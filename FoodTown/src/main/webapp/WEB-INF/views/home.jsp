@@ -28,6 +28,12 @@
 		</div>
 	</div>
 	<div class="site" id="page">
+
+		<c:if test="${orderCreated }">
+			<div class="alert alert-success">Order is successfully created.
+			</div>
+		</c:if>
+
 		<!-- Header-->
 		<c:import url="/header"></c:import>
 

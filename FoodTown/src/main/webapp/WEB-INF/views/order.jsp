@@ -61,12 +61,6 @@
   <div class="row">
     <div class="col-md-12">
     
-    <c:if test="${orderCreated }">
- 		<div class="alert alert-success">
-		  Order is successfully created.
-		</div>
-    </c:if>
-      
    <table class="table table-bordered shop-cart margin-bottom-50">
       <thead>
          <tr>
@@ -74,7 +68,8 @@
             <th class="product-name">Product</th>
             <th class="product-price text-center">Unit Price</th>
             <th class="product-price text-center">Amount</th>
-            <th class="product-price text-center">Total Price</th>                        
+            <th class="product-price text-center">Total Price</th>
+            <th class="product-price text-center">Delete</th>                           
          </tr>
       </thead>
       <tbody>
@@ -85,17 +80,20 @@
 		        <td class="product-name"><h5>${ item.product.ptitle }</h5></td>
 		        <td class="product-price"> <span class="Price-amount">$${ item.product.pprice }</span></td>
 		        <td class="product-price"> <span class="Price-amount">${ item.amount }</span></td>
-		        <td class="product-price"> <span class="Price-amount">${ item.totalPrice }</span></td>		        		        
+		        <td class="product-price"> <span class="Price-amount">${ item.totalPrice }</span></td>
+		        <td class="product-price"><a href='<s:url value="/basketDelete/${item.id}"></s:url>' type="submit" class="btn margin-top-15">DELETE</a> </td>			        		        
 	        </tr>
 		</c:forEach>
          
       </tbody>
    </table>
    
-   <c:if test="${!orderCreated or (orderCreated eq null)}">
-		<a class="btn margin-top-15"
-			href='<s:url value="/create-order"></s:url>'>Create Order</a>
-	</c:if>
+	<a class="btn margin-top-15"
+		href='<s:url value="/create-order"></s:url>'>Create Order</a>
+	
+	<a class="btn margin-top-15"
+			href='<s:url value="/back-page"></s:url>'>Back</a>
+			
       </div>
         </div>
         </div>

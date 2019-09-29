@@ -46,7 +46,7 @@
             <span class="jl-cart-icon ti-shopping-cart"></span>
             <span class="jl-cart-number"><span>0</span></span>
         </a>
-<div class="jl-top-btn"><a href="#">Reservation</a></div>
+<div class="jl-top-btn"><a href='<s:url value="/detail"></s:url>'>Reservation</a></div>
 </div>
 
 </div>

@@ -34,7 +34,7 @@ public class Order {
 	private Basket basket;
     
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "create_date")
+    @Column(name = "create_date", updatable = false)
 	private Date createDate;
     
     @Enumerated(EnumType.STRING)
